@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();         
 const bodyParser = require('body-parser');
-const port = process.env.port || 3300;; //porta padrão
 const mysql = require('mysql');
 var veiculosRouter = require('./routes/veiculos');
 
@@ -64,5 +63,5 @@ app.use('/veiculos', router);
 
 
 //inicia o servidor
-app.listen(port); 
-console.log('API OnCar Ok! - port: ' + port);
+app.listen(process.env.PORT || 5000); 
+console.log('API OnCar Ok!');
