@@ -36,6 +36,12 @@ router.route("/veiculos/marca/:marca").get(function(req, res) {
     });
 })
 
+router.route("/veiculos/veiculo/:busca").get(function(req, res) {
+    veiculosRouter.buscar(req.params.busca).then(data => {
+        res.send(data);
+    });
+})
+
 //CREATE
 router.route("/veiculos").post(function(req, res) {
     veiculosRouter.createVeiculo(req.body).then(data => {

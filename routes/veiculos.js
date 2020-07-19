@@ -23,6 +23,13 @@ const veiculosRouter = {
     .then(rows => rows);
   },
 
+  
+  buscar(veiculo) {
+    return knex('Veiculos')
+    .where('veiculo', 'like', `%${veiculo}%`)
+    .then(rows => rows);
+  },
+
   buscarPorMarca(marca) {
     return knex('Veiculos')
     .where({ marca: marca })
